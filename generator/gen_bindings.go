@@ -155,7 +155,7 @@ func unpackPlain(buf io.Writer, goSpec tl.GoTypeSpec, cgoSpec tl.CGoSpec, level 
 			uplevel, uplevel, cgoSpec.AtLevel(level), level)
 		return
 	}
-	fmt.Fprintf(buf, "v%d[i%d] = *(*%s)(unsafe.Pointer(&x%d))\n",
+	fmt.Fprintf(buf, "v%d[i%d] = *(%s)(unsafe.Pointer(&x%d))\n",
 		uplevel, uplevel, cgoSpec.Base, level)
 }
 
